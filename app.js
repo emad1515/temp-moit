@@ -7,8 +7,8 @@ import xss from 'xss-clean';
 import hpp from 'hpp';
 import ExpressMongoSanitize from 'express-mongo-sanitize';
 import cookieParser from 'cookie-parser';
-// import path, { dirname } from 'path';
-// import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { config } from 'dotenv';
 
 import documentRouter from './routes/documentRoutes.js';
@@ -23,8 +23,8 @@ const app = express();
 
 // 1) GLOBAL MIDDLEWARE
 // Serving static files
-// const __dirname = dirname(fileURLToPath(import.meta.url));
-// app.use(express.static(path.resolve(__dirname, './client/dist')));
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.resolve(__dirname, './public')));
 
 // app.use(express.static(`${__dirname}/public`));
 
