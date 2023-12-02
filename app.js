@@ -24,7 +24,7 @@ const app = express();
 // 1) GLOBAL MIDDLEWARE
 // Serving static files
 const __dirname = dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.resolve(__dirname, './public')));
+app.use(express.static(path.resolve(__dirname, './client/dist')));
 
 // app.use(express.static(`${__dirname}/public`));
 
